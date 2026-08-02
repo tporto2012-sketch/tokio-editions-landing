@@ -29,19 +29,27 @@
   </div>
 </header>
 
-<section class="block on-niche">
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>PLASTIMODELISMO <span class="sep">·</span> GUIAS GRATUITOS <span class="sep">·</span> SEM JARGÃO <span class="sep">·</span> PASSO A PASSO <span class="sep">·</span> ESCALA ZERO <span class="sep">·</span></span>
+    <span>PLASTIMODELISMO <span class="sep">·</span> GUIAS GRATUITOS <span class="sep">·</span> SEM JARGÃO <span class="sep">·</span> PASSO A PASSO <span class="sep">·</span> ESCALA ZERO <span class="sep">·</span></span>
+  </div>
+</div>
+
+<section class="block on-niche reveal">
   <div class="wrap">
     <p class="kicker">Guias gratuitos</p>
-    <h1 class="title">Blog</h1>
+    <h1 class="title scream">Blog</h1>
     <p class="lede">Conteúdo direto sobre plastimodelismo pra quem está começando do zero. Sem jargão, sem enrolação — o mesmo tom do Escala Zero, só que de graça.</p>
   </div>
 </section>
 
 <main>
-<section class="block on-niche" style="padding-top:0;">
+<section class="block on-niche reveal" style="padding-top:0;">
   <div class="wrap">
     <div class="post-list">
       <a class="post-card" href="como-escolher-primeiro-kit-de-plastimodelismo.html">
+        <span class="num-bg">01</span>
         <div class="wrap" style="padding:0;">
           <p class="cat">Primeiros passos</p>
           <h3>Como escolher seu primeiro kit de plastimodelismo</h3>
@@ -53,7 +61,7 @@
 </section>
 </main>
 
-<section class="block on-ink" style="padding:64px 0;">
+<section class="block on-ink reveal" style="padding:64px 0;">
   <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;">
     <div>
       <p class="kicker" style="margin:0 0 8px;">Quer ir além dos artigos gratuitos?</p>
@@ -68,6 +76,25 @@
     tokio editions · <a href="../index.html">Coleção Mundo em Escala</a> · <a href="../termos.html">Termos</a> · <a href="../privacidade.html">Privacidade</a>
   </div>
 </footer>
+
+<script>
+(function(){
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var ro = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          ro.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function(el){ ro.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+})();
+</script>
 
 </body>
 </html>
