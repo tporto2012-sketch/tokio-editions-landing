@@ -35,7 +35,8 @@ a{color:inherit;}
 /* ---------- HEADER ---------- */
 .blog-header{background:var(--ink);color:var(--bone);padding:20px 0;}
 .blog-header .row{display:flex;align-items:center;justify-content:space-between;gap:12px;}
-.blog-header .mark{font-family:'Outfit',var(--display);font-size:18px;letter-spacing:-0.01em;}
+.blog-header .mark{display:flex;align-items:center;gap:10px;font-family:'Outfit',var(--display);font-size:18px;letter-spacing:-0.01em;}
+.blog-header .mark svg{width:24px;height:24px;flex:none;}
 .blog-header .mark b{font-weight:700;}
 .blog-header .mark span{font-weight:300;color:var(--graphite);}
 .blog-header .tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--niche-soft);}
@@ -89,11 +90,13 @@ blockquote.pull{font-family:var(--display);font-weight:700;font-size:clamp(24px,
 
 /* ---------- POST CARDS (index) ---------- */
 .post-list{display:flex;flex-direction:column;gap:1px;background:rgba(242,237,228,.18);margin-top:48px;}
-.post-card{position:relative;background:var(--niche);padding:32px 0;display:block;text-decoration:none;color:var(--bone);overflow:hidden;transition:background-color .3s ease-out, color .3s ease-out;}
-.post-card:hover{background:var(--ink);color:var(--bone);}
-.post-card .num-bg{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-family:var(--display);font-weight:700;font-size:clamp(80px,14vw,160px);line-height:1;color:rgba(242,237,228,.08);pointer-events:none;z-index:0;}
+.post-card{position:relative;background:var(--ink);padding:32px 0;display:block;text-decoration:none;color:var(--bone);overflow:hidden;transition:background-color .3s ease-out, color .3s ease-out;}
+.post-card:hover{background:var(--bone);color:var(--ink);}
+.post-card .num-bg{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-family:var(--display);font-weight:700;font-size:clamp(80px,14vw,160px);line-height:1;color:rgba(242,237,228,.08);pointer-events:none;z-index:0;transition:color .3s ease-out;}
+.post-card:hover .num-bg{color:rgba(26,26,26,.06);}
 .post-card .wrap{position:relative;z-index:1;}
-.post-card .cat{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--niche-soft);margin:0 0 10px;}
+.post-card .cat{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--niche-soft);margin:0 0 10px;transition:color .3s ease-out;}
+.post-card:hover .cat{color:var(--red);}
 .post-card h3{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:24px;margin:0 0 10px;letter-spacing:-0.02em;}
 .post-card p{margin:0;opacity:.75;font-size:15px;max-width:60ch;}
 
