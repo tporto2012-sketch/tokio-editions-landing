@@ -24,12 +24,12 @@
 <meta property="og:site_name" content="tokio editions"/>
 <meta property="og:title" content="Escala Zero — guia de entrada no plastimodelismo"/>
 <meta property="og:description" content="Do primeiro kit ao primeiro modelo concluído. Sem jargão, sem experiência prévia, passo a passo. R$19,90 — coleção Mundo em Escala, Nº 01."/>
-<meta property="og:image" content="https://tokioeditions.com/assets/Capa_Hotmart.png"/>
+<meta property="og:image" content="https://tokioeditions.com/assets/v1-og.jpg"/>
 <meta property="og:locale" content="pt_BR"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Escala Zero — guia de entrada no plastimodelismo"/>
 <meta name="twitter:description" content="Do primeiro kit ao primeiro modelo concluído. Sem jargão, sem experiência prévia, passo a passo. R$19,90."/>
-<meta name="twitter:image" content="https://tokioeditions.com/assets/Capa_Hotmart.png"/>
+<meta name="twitter:image" content="https://tokioeditions.com/assets/v1-og.jpg"/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -98,7 +98,7 @@
 
   /* ---------- HERO ---------- */
   .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:var(--bone);overflow:hidden;}
-  .hero-bg{position:absolute;top:-48px;left:0;right:0;bottom:-48px;background-image:url('assets/v-capa-4-web.jpg');background-size:cover;background-position:60% 45%;}
+  .hero-bg{position:absolute;top:-48px;left:0;right:0;bottom:-48px;background-image:url('assets/v1-hero-web.jpg');background-size:cover;background-position:60% 45%;}
   .hero-bg.parallax{will-change:transform;}
   .hero-scrim{position:absolute;inset:0;background:
       linear-gradient(180deg, rgba(15,14,12,.55) 0%, rgba(15,14,12,.35) 30%, rgba(15,14,12,.78) 78%, rgba(12,11,10,.94) 100%);}
@@ -187,7 +187,8 @@
   .offer .section-head h2{color:var(--bone);max-width:none;}
   .offer .section-head p{color:rgba(var(--bone-rgb),.62);font-size:17px;margin:14px 0 0;max-width:52ch;}
 
-  .items{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:1px;background:var(--ink-line);border:1px solid var(--ink-line);margin:48px 0 44px;}
+  .items{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--ink-line);border:1px solid var(--ink-line);margin:48px 0 44px;}
+  .item-card.main{grid-column:1/-1;}
   .item-card{background:var(--ink);padding:26px 22px;cursor:default;transition:background-color .15s ease-out, box-shadow .15s ease-out;}
   .item-card:hover{background:#242320;box-shadow:inset 0 0 0 1px var(--ink-line);}
   .item-card .n{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--ash);text-transform:uppercase;}
@@ -195,7 +196,8 @@
   .item-card .benefit{display:block;font-family:var(--body);font-weight:400;font-size:13px;color:rgba(var(--bone-rgb),.55);margin-top:6px;line-height:1.4;}
   .item-card.main b{font-size:22px;font-weight:700;}
   .item-card.main .n{color:#e0a89d;}
-  @media (max-width:860px){ .items{grid-template-columns:1fr 1fr;} .item-card.main{grid-column:span 2;} }
+  @media (max-width:860px){ .items{grid-template-columns:1fr 1fr;} }
+  @media (max-width:480px){ .items{grid-template-columns:1fr;} }
 
   .offer-foot{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:32px;padding-top:36px;border-top:1px solid var(--ink-line);}
   .offer-price .now{font-family:var(--display);font-weight:700;font-size:44px;}
@@ -303,16 +305,16 @@
       <h2>O que você vai encontrar neste livro</h2>
     </div>
     <div class="toc-list">
-      <div class="toc-row"><span class="num dim">—</span><span class="title">Introdução<small>Por que começar parece mais difícil do que é</small></span><span class="pages">01</span></div>
-      <div class="toc-row chapter"><span class="num">01</span><span class="title">O mapa do hobby</span><span class="pages">02–05</span></div>
-      <div class="toc-row chapter"><span class="num">02</span><span class="title">Escolhendo seu primeiro kit</span><span class="pages">06–10</span></div>
-      <div class="toc-row chapter"><span class="num">03</span><span class="title">Montando a bancada</span><span class="pages">11–15</span></div>
-      <div class="toc-row chapter"><span class="num">04</span><span class="title">Antes de colar: ler, testar, planejar</span><span class="pages">16–20</span></div>
-      <div class="toc-row chapter"><span class="num">05</span><span class="title">A primeira montagem, passo a passo</span><span class="pages">21–25</span></div>
-      <div class="toc-row chapter"><span class="num">06</span><span class="title">Acabamento simples e o que vem depois</span><span class="pages">26–31</span></div>
-      <div class="toc-row"><span class="num dim">—</span><span class="title">Conclusão<small>Seu primeiro modelo não é o último</small></span><span class="pages">32</span></div>
-      <div class="toc-row"><span class="num dim">—</span><span class="title">Glossário</span><span class="pages">33</span></div>
-      <div class="toc-row"><span class="num dim">—</span><span class="title">Referências</span><span class="pages">34</span></div>
+      <div class="toc-row"><span class="num dim">—</span><span class="title">Introdução<small>Por que começar parece mais difícil do que é</small></span><span class="pages">03–04</span></div>
+      <div class="toc-row chapter"><span class="num">01</span><span class="title">O mapa do hobby</span><span class="pages">05–08</span></div>
+      <div class="toc-row chapter"><span class="num">02</span><span class="title">Escolhendo seu primeiro kit</span><span class="pages">09–13</span></div>
+      <div class="toc-row chapter"><span class="num">03</span><span class="title">Montando a bancada</span><span class="pages">14–19</span></div>
+      <div class="toc-row chapter"><span class="num">04</span><span class="title">Antes de colar: ler, testar, planejar</span><span class="pages">20–25</span></div>
+      <div class="toc-row chapter"><span class="num">05</span><span class="title">A primeira montagem, passo a passo</span><span class="pages">26–34</span></div>
+      <div class="toc-row chapter"><span class="num">06</span><span class="title">Acabamento simples e o que vem depois</span><span class="pages">35–43</span></div>
+      <div class="toc-row"><span class="num dim">—</span><span class="title">Conclusão<small>Seu primeiro modelo não é o último</small></span><span class="pages">44–45</span></div>
+      <div class="toc-row"><span class="num dim">—</span><span class="title">Glossário</span><span class="pages">46–48</span></div>
+      <div class="toc-row"><span class="num dim">—</span><span class="title">Referências</span><span class="pages">49–50</span></div>
     </div>
   </div>
 </section>
@@ -328,7 +330,7 @@
       <p>É um efeito comum de qualquer hobby técnico visto de fora, antes de qualquer experiência prática. Vontade de começar, e ao mesmo tempo a sensação de que existe informação demais, opções demais, e nenhum lugar claro por onde entrar. Este livro existe para resolver essa ordem.</p>
     </div>
     <div class="intro-photo">
-      <img src="assets/v-003-bancada-flatlay-web.jpg" alt="Kit, manual, ferramentas e bancada organizados antes da primeira montagem" loading="lazy"/>
+      <img src="assets/v1-intro-web.jpg" alt="Teste de encaixe das peças, sem cola, antes de montar de verdade" loading="lazy"/>
       <p class="cap">Um espaço organizado é o primeiro passo, não o último capítulo.</p>
     </div>
   </div>
@@ -380,11 +382,12 @@
     </div>
 
     <div class="items">
-      <div class="item-card main"><span class="n">Principal</span><b>E-book Escala Zero (37 páginas diagramadas)</b></div>
-      <div class="item-card"><span class="n">Bônus 1</span><b>Checklist de ferramentas</b><span class="benefit">Saiba exatamente o que comprar, sem gastar à toa</span></div>
-      <div class="item-card"><span class="n">Bônus 2</span><b>Folha de planejamento</b><span class="benefit">Organize seu primeiro projeto antes de começar</span></div>
-      <div class="item-card"><span class="n">Bônus 3</span><b>Cartão de erros comuns</b><span class="benefit">Evite os erros que travam todo iniciante</span></div>
-      <div class="item-card"><span class="n">Bônus 4</span><b>Diário de bordo</b><span class="benefit">Registre o progresso do seu primeiro modelo</span></div>
+      <div class="item-card main"><span class="n">Principal</span><b>E-book Escala Zero (53 páginas diagramadas)</b></div>
+      <div class="item-card"><span class="n">Bônus 1</span><b>Ficha de acompanhamento</b><span class="benefit">Registre as decisões do seu primeiro modelo e avalie o resultado ao final</span></div>
+      <div class="item-card"><span class="n">Bônus 2</span><b>Checklist da primeira bancada</b><span class="benefit">12 verificações de segurança e organização antes de abrir o kit</span></div>
+      <div class="item-card"><span class="n">Bônus 3</span><b>Lista de ferramentas essenciais</b><span class="benefit">O que comprar para o primeiro kit, e o que pode esperar</span></div>
+      <div class="item-card"><span class="n">Bônus 4</span><b>Planejamento do primeiro kit</b><span class="benefit">Ficha para ler, testar e decidir antes de colar</span></div>
+      <div class="item-card"><span class="n">Bônus 5</span><b>Glossário de consulta rápida</b><span class="benefit">25 termos usados no livro, em uma página</span></div>
     </div>
 
     <div class="offer-foot">
@@ -401,7 +404,7 @@
         <p class="checkout-hint">Mesmo produto, mesmo preço: escolha por preferência de pagamento.</p>
       </div>
     </div>
-    <p class="format-note">PDF leve (~3,4MB), funciona em celular, tablet e computador. Garantia incondicional de 7 dias. Ao comprar, você concorda com os <a href="termos.html" style="color:inherit;text-decoration:underline">Termos de Venda</a>.</p>
+    <p class="format-note">Arquivo digital em PDF, funciona em celular, tablet e computador. Garantia incondicional de 7 dias. Ao comprar, você concorda com os <a href="termos.html" style="color:inherit;text-decoration:underline">Termos de Venda</a>.</p>
   </div>
 </section>
 
@@ -444,7 +447,7 @@
     <div class="qa-list">
       <div class="qa"><span class="idx">01</span><div><b>Preciso ter algum kit já comprado?</b><p>Não. O Capítulo 2 ensina como escolher o primeiro kit com critério, mesmo que você ainda não tenha nenhum.</p></div></div>
       <div class="qa"><span class="idx">02</span><div><b>O e-book ensina acabamento avançado, aerografia ou dioramas?</b><p>Não é o foco deste guia: ele cobre do primeiro kit ao primeiro modelo concluído, com acabamento simples. Quem já pratica o hobby vai achar o conteúdo básico demais.</p></div></div>
-      <div class="qa"><span class="idx">03</span><div><b>Em qual formato recebo?</b><p>PDF (versão leve, ~3,4MB), com todas as imagens e diagramação. Funciona em celular, tablet e computador.</p></div></div>
+      <div class="qa"><span class="idx">03</span><div><b>Em qual formato recebo?</b><p>Arquivo digital em PDF, com todas as imagens e diagramação. Funciona em celular, tablet e computador.</p></div></div>
       <div class="qa"><span class="idx">04</span><div><b>Como recebo depois de comprar?</b><p>Entrega automática por e-mail assim que o pagamento é confirmado, direto pela Kiwify ou Hotmart.</p></div></div>
       <div class="qa"><span class="idx">05</span><div><b>E se eu não gostar?</b><p>Garantia incondicional de 7 dias: devolução total, sem perguntas.</p></div></div>
     </div>
@@ -454,7 +457,7 @@
 
 <section class="final" data-folio="08" data-label="Fechamento">
   <div class="wrap" style="max-width:640px;margin:0 auto;">
-    <div class="final-photo"><img src="assets/v-capa-4-web.jpg" alt="Modelo montado e pintado, o resultado do primeiro projeto" loading="lazy"/></div>
+    <div class="final-photo"><img src="assets/v1-final-web.jpg" alt="Modelo montado e pintado, o resultado do primeiro projeto" loading="lazy"/></div>
     <p class="final-cap">O resultado: seu primeiro modelo, do jeito que você imaginou</p>
     <p class="kicker" style="display:flex;justify-content:center;"><span class="kanji" style="margin-right:10px">侍</span>Mundo em Escala · Nº 01</p>
     <h2>Seu primeiro modelo não precisa ser sorte.</h2>
