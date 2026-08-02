@@ -148,7 +148,6 @@
   .pillar .t:before{content:"";display:inline-block;width:5px;height:5px;background:var(--katana);margin-right:8px;border-radius:0;}
   .pillar .d{font-size:13.5px;color:rgba(var(--bone-rgb),.62);line-height:1.4;}
   .hero-cta{display:flex;align-items:center;gap:22px;flex-wrap:wrap;}
-  @media (max-width:640px){ .hero-cta{margin-bottom:52px;} }
   .price-now{font-family:var(--display);font-weight:700;font-size:30px;color:var(--bone);}
   .price-old{font-family:var(--mono);font-size:15px;color:rgba(var(--bone-rgb),.45);text-decoration:line-through;margin-left:8px;}
 
@@ -542,10 +541,24 @@
 
   var folioBadge = document.querySelector('.folio');
   var footerEl = document.querySelector('footer');
-  if(folioBadge && footerEl && 'IntersectionObserver' in window){
+  var heroCtaEl = document.querySelector('.hero-cta');
+  if(folioBadge && footerEl && heroCtaEl && 'IntersectionObserver' in window){
+    var obscured = { footer: false, heroCta: false };
+    function updateFolioVisibility(){
+      folioBadge.classList.toggle('hide', obscured.footer || obscured.heroCta);
+    }
+    var heroCtaObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        obscured.heroCta = entry.isIntersecting;
+        updateFolioVisibility();
+      });
+    }, { threshold: 0 });
+    heroCtaObserver.observe(heroCtaEl);
+
     var fo = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
-        folioBadge.classList.toggle('hide', entry.isIntersecting);
+        obscured.footer = entry.isIntersecting;
+        updateFolioVisibility();
       });
     }, { threshold: 0 });
     fo.observe(footerEl);
