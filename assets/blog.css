@@ -39,7 +39,7 @@ a{color:inherit;}
 .blog-header .mark svg{width:24px;height:24px;flex:none;}
 .blog-header .mark b{font-weight:700;}
 .blog-header .mark span{font-weight:300;color:var(--graphite);}
-.blog-header .tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--niche-soft);}
+.blog-header .tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);}
 .blog-header a{text-decoration:none;}
 
 /* ---------- SOLID BLOCKS ---------- */
@@ -83,20 +83,20 @@ blockquote.pull{font-family:var(--display);font-weight:700;font-size:clamp(24px,
 /* ---------- MARQUEE ---------- */
 .marquee{overflow:hidden;background:var(--ink);border-top:1px solid rgba(242,237,228,.14);border-bottom:1px solid rgba(242,237,228,.14);}
 .marquee-track{display:flex;width:max-content;animation:marquee 22s linear infinite;}
-.marquee-track span{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--niche-soft);white-space:nowrap;padding:16px 0;}
+.marquee-track span{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);white-space:nowrap;padding:16px 0;}
 .marquee-track span .sep{color:var(--graphite);}
 @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 @media (prefers-reduced-motion: reduce){ .marquee-track{animation:none;} .marquee{overflow-x:auto;} }
 
 /* ---------- POST CARDS (index) ---------- */
 .post-list{display:flex;flex-direction:column;gap:1px;background:rgba(242,237,228,.18);margin-top:48px;}
-.post-card{position:relative;background:var(--ink);padding:32px 0;display:block;text-decoration:none;color:var(--bone);overflow:hidden;transition:background-color .3s ease-out, color .3s ease-out;}
+.post-card{position:relative;background:var(--amber);padding:32px 36px;display:block;text-decoration:none;color:var(--bone);overflow:hidden;transition:background-color .3s ease-out, color .3s ease-out;}
 .post-card:hover{background:var(--bone);color:var(--ink);}
-.post-card .num-bg{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-family:var(--display);font-weight:700;font-size:clamp(80px,14vw,160px);line-height:1;color:rgba(242,237,228,.08);pointer-events:none;z-index:0;transition:color .3s ease-out;}
+.post-card .num-bg{position:absolute;right:20px;top:50%;transform:translateY(-50%);font-family:var(--display);font-weight:700;font-size:clamp(80px,14vw,160px);line-height:1;color:rgba(242,237,228,.16);pointer-events:none;z-index:0;transition:color .3s ease-out;}
 .post-card:hover .num-bg{color:rgba(26,26,26,.06);}
-.post-card .wrap{position:relative;z-index:1;}
-.post-card .cat{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--niche-soft);margin:0 0 10px;transition:color .3s ease-out;}
+.post-card .cat{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(242,237,228,.72);margin:0 0 10px;transition:color .3s ease-out;position:relative;z-index:1;}
 .post-card:hover .cat{color:var(--red);}
+.post-card h3, .post-card p{position:relative;z-index:1;}
 .post-card h3{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:24px;margin:0 0 10px;letter-spacing:-0.02em;}
 .post-card p{margin:0;opacity:.75;font-size:15px;max-width:60ch;}
 
