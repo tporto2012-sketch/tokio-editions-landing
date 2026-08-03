@@ -54,8 +54,8 @@ a{color:inherit;}
 .on-niche .kicker, .on-ink .kicker{color:var(--niche-soft);}
 .on-bone .kicker, .on-bone-dim .kicker{color:var(--red);}
 
-h1.title{font-family:var(--display);font-weight:700;font-size:clamp(36px,6vw,64px);line-height:1.02;letter-spacing:-0.02em;margin:0 0 20px;}
-h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(24px,3.4vw,32px);letter-spacing:-0.01em;margin:0 0 20px;}
+h1.title{font-family:var(--display);font-weight:700;font-size:clamp(36px,6vw,64px);line-height:1.02;letter-spacing:-0.02em;margin:0 0 20px;color:var(--red);}
+h2.section-title{font-family:var(--display);font-weight:700;font-size:clamp(24px,3.4vw,32px);letter-spacing:-0.01em;margin:0 0 20px;color:var(--red);}
 .lede{font-size:clamp(17px,1.6vw,20px);line-height:1.55;max-width:56ch;margin:0;}
 .on-niche .lede, .on-ink .lede{opacity:.86;}
 .on-bone .lede, .on-bone-dim .lede{color:var(--graphite);}
