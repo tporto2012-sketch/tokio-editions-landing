@@ -178,7 +178,7 @@
   .quiz-opt:hover .arrow{opacity:1;transform:translateX(2px);}
   .quiz-result{display:flex;flex-direction:column;gap:20px;animation:fadeUp .4s var(--ease) both;}
   .result-photo{border-radius:2px;overflow:hidden;}
-  .result-photo img{width:100%;display:block;}
+  .result-photo img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block;}
   .quiz-result p{color:rgba(var(--bone-rgb),.72);font-size:16px;line-height:1.55;}
   .quiz-restart{align-self:flex-start;background:transparent;border:0;color:var(--ash);font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-decoration:underline;cursor:pointer;padding:0;transition:color .15s ease-out;}
   .quiz-restart:hover{color:var(--bone);}
@@ -526,7 +526,7 @@
       </div>
       <div class="gate-card">
         <div class="quiz-result">
-          <div class="result-photo" id="resultPhoto" style="display:none"><img src="assets/ponte/quiz-golpe.jpg" alt="Ilustração de proteção contra golpes digitais" width="1000" height="563" loading="lazy"/></div>
+          <div class="result-photo" id="resultPhoto" style="display:none"><img id="resultPhotoImg" src="" alt="" width="1000" height="563" loading="lazy"/></div>
           <p id="resultBody"></p>
           <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:center">
             <button class="btn" id="openSiteBtn">Ver o livro completo</button>
@@ -567,8 +567,8 @@
     { q: 'Qual é o maior medo dela?', opts: ['Estragar o aparelho', 'Cair em algum golpe', 'Não conseguir aprender sozinha'] }
   ];
   var results = [
-    { title: 'O livro começa exatamente por aí.', body: 'O Capítulo 6, "Ela não vai estragar o celular", existe só pra isso: mostrar que dá pra explorar sem medo, com o botão voltar como rede de segurança.' },
-    { title: 'Golpe é o Capítulo 15 inteiro.', body: 'O livro dedica um capítulo de fechamento só a reconhecer golpes digitais, e o cartão de consulta rápida (incluso) resume os 5 golpes mais comuns pra ela ter sempre por perto.', image: true },
+    { title: 'O livro começa exatamente por aí.', body: 'O Capítulo 6, "Ela não vai estragar o celular", existe só pra isso: mostrar que dá pra explorar sem medo, com o botão voltar como rede de segurança.', image: 'assets/ponte/quiz-aparelho.jpg', imageAlt: 'Ilustração de um idoso usando o celular com confiança, no sofá' },
+    { title: 'Golpe é o Capítulo 15 inteiro.', body: 'O livro dedica um capítulo de fechamento só a reconhecer golpes digitais, e o cartão de consulta rápida (incluso) resume os 5 golpes mais comuns pra ela ter sempre por perto.', image: 'assets/ponte/quiz-golpe.jpg', imageAlt: 'Ilustração de proteção contra golpes digitais' },
     { title: '"Sozinha, no tempo dela" é a promessa do livro.', body: 'O subtítulo não é força de expressão: cada capítulo é passo a passo, sem pressa, com o cartão de consulta pra quando ela travar sem ninguém por perto.' }
   ];
 
@@ -584,6 +584,7 @@
   var resultTitleEl = document.getElementById('resultTitle');
   var resultBodyEl = document.getElementById('resultBody');
   var resultPhotoEl = document.getElementById('resultPhoto');
+  var resultPhotoImgEl = document.getElementById('resultPhotoImg');
 
   function renderStep(){
     var data = questions[step];
@@ -618,7 +619,13 @@
     var r = results[answers[2]];
     resultTitleEl.textContent = r.title;
     resultBodyEl.textContent = r.body;
-    resultPhotoEl.style.display = r.image ? '' : 'none';
+    if (r.image) {
+      resultPhotoImgEl.src = r.image;
+      resultPhotoImgEl.alt = r.imageAlt || '';
+      resultPhotoEl.style.display = '';
+    } else {
+      resultPhotoEl.style.display = 'none';
+    }
     quizQuestionsEl.style.display = 'none';
     quizResultEl.style.display = '';
   }
