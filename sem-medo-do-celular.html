@@ -62,7 +62,7 @@
 
   .masthead{position:sticky;top:0;z-index:40;background:rgba(var(--bone-rgb),.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--bone-line);}
   .masthead .row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:12px;}
-  .mark{display:flex;align-items:center;gap:10px;}
+  .mark{display:flex;align-items:center;gap:10px;text-decoration:none;}
   .mark svg{width:24px;height:24px;flex:none;}
   .mark .word{font-family:var(--wordmark);font-size:18px;letter-spacing:-0.01em;}
   .mark .word b{font-weight:700;}
@@ -272,13 +272,13 @@
 <div class="site-reveal">
 <header class="masthead">
   <div class="wrap row">
-    <div class="mark">
+    <a class="mark" href="/" aria-label="tokio editions — página inicial">
       <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M 74.645 106.693 A 44 44 0 1 1 107.458 70.883" fill="none" stroke="var(--ink)" stroke-width="8" stroke-linecap="butt"/>
         <rect x="82" y="80" width="24" height="24" fill="var(--rust)"/>
       </svg>
       <div class="word"><b>tokio</b><span>&nbsp;editions</span></div>
-    </div>
+    </a>
     <div class="kicker">Coleção Ponte · Nº 01</div>
   </div>
 </header>
