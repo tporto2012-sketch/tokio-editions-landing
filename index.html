@@ -38,7 +38,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Bricolage+Grotesque:wght@300;400;500;700&family=Noto+Serif+JP:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Bricolage+Grotesque:wght@300;400;500;700&family=Outfit:wght@300;700&family=Noto+Serif+JP:wght@400&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#1A1A1A;
@@ -49,10 +49,14 @@
     --bone-line-soft: rgba(26,26,26,.07);
     --katana:#C0392B;
     --katana-deep:#a52f21;
+    --katana-tint:#F5E2DC;
     --rust:#C4713F;
     --rust-deep:#8A4A26;
+    --rust-tint:#F3E3D2;
     --ash:#8A827A;
     --ash-onlight:#655D52;
+    --neu-light: rgba(255,255,255,.65);
+    --neu-dark: rgba(154,130,108,.32);
     --display:'Bricolage Grotesque',sans-serif;
     --body:'DM Sans',sans-serif;
     --wordmark:'Outfit',sans-serif;
@@ -75,50 +79,171 @@
   }
 
   .masthead{position:sticky;top:0;z-index:40;background:rgba(var(--bone-rgb),.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--bone-line);}
-  .masthead .row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:12px;}
+  .masthead .row{position:relative;display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:12px;}
   .mark{display:flex;align-items:center;gap:10px;text-decoration:none;}
   .mark svg{width:26px;height:26px;flex:none;}
+  .mark rect.sq{transform-box:fill-box;transform-origin:center;animation:markSquareIn .5s var(--ease) .15s both;transition:transform .25s var(--ease);}
+  .mark:hover rect.sq{transform:translate(3px,-3px);}
+  @keyframes markSquareIn{from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;}}
+  @media (prefers-reduced-motion: reduce){
+    .mark rect.sq{animation:none;opacity:1;transform:none;}
+    .mark:hover rect.sq{transform:none;}
+  }
   .mark .word{font-family:var(--wordmark);font-size:19px;letter-spacing:-0.01em;}
   .mark .word b{font-weight:700;}
   .mark .word span{font-weight:300;color:var(--ash);}
   .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--ash-onlight);text-transform:uppercase;}
 
-  .hero{padding:88px 0 64px;border-bottom:1px solid var(--bone-line);}
-  .hero .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.16em;color:var(--katana-deep);text-transform:uppercase;margin:0 0 20px;display:flex;align-items:center;gap:10px;}
-  .hero .eyebrow .sq{width:7px;height:7px;background:var(--katana);display:inline-block;}
-  .hero h1{font-size:clamp(38px,6.4vw,64px);font-weight:700;letter-spacing:-0.01em;line-height:1.04;}
-  .hero .lede{font-size:clamp(16px,1.7vw,19px);color:var(--ash-onlight);max-width:52ch;margin:24px 0 0;line-height:1.6;}
+  .skip-link{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--bone);padding:10px 16px;font-family:var(--mono);font-size:12px;z-index:100;text-decoration:none;}
+  .skip-link:focus{left:12px;top:12px;}
 
-  .catalog{padding:64px 0 96px;}
-  .catalog-head{margin:0 0 36px;}
-  .catalog-head h2{font-size:clamp(21px,2.4vw,26px);font-weight:700;}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bone-line);border:1px solid var(--bone-line);}
-  @media (max-width:760px){ .grid{grid-template-columns:1fr;} }
-  .card{background:var(--bone);display:flex;flex-direction:column;text-decoration:none;color:var(--ink);}
-  .card-media{aspect-ratio:3/4;overflow:hidden;background:var(--bone-dim);border-bottom:1px solid var(--bone-line);}
-  .card-media img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .3s var(--ease);}
-  .card.escala .card-media img{object-position:center 82%;}
-  .card:hover .card-media img{transform:scale(1.02);}
-  .card-body{padding:28px 30px 30px;display:flex;flex-direction:column;flex:1;}
-  .card .kicker{margin-bottom:12px;}
-  .card .kicker.katana{color:var(--katana-deep);}
-  .card .kicker.rust{color:var(--rust-deep);}
-  .card h3{font-size:23px;font-weight:700;margin-bottom:10px;}
-  .card .hook{font-size:14.5px;color:var(--ash-onlight);line-height:1.55;flex:1;}
-  .card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:24px;padding-top:18px;border-top:1px solid var(--bone-line-soft);}
-  .card .price{font-family:var(--mono);font-size:15px;font-weight:500;}
-  .card .go{font-family:var(--display);font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:6px;}
-  .card .go svg{width:14px;height:14px;transition:transform .15s var(--ease);}
-  .card:hover .go svg{transform:translateX(3px);}
-  .card.escala .go{color:var(--katana-deep);}
-  .card.ponte .go{color:var(--rust-deep);}
+  .nav{display:flex;gap:28px;}
+  .nav a{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--ash-onlight);text-transform:uppercase;text-decoration:none;transition:color .15s var(--ease);}
+  .nav a:hover{color:var(--katana-deep);}
+  .nav-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:var(--bone);border:0;cursor:pointer;color:var(--ink);box-shadow:6px 6px 12px var(--neu-dark),-6px -6px 12px var(--neu-light);transition:box-shadow .2s var(--ease),transform .2s var(--ease);}
+  .nav-toggle svg{width:19px;height:19px;display:block;}
+  .nav-toggle:active,.nav-toggle[aria-expanded="true"]{box-shadow:inset 4px 4px 8px var(--neu-dark),inset -4px -4px 8px var(--neu-light);transform:translateY(1px);}
+  @media (max-width:640px){
+    .nav-toggle{display:flex;}
+    .nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bone);border-bottom:1px solid var(--bone-line);box-shadow:0 12px 24px -12px rgba(26,26,26,.15);}
+    .nav.open{display:flex;}
+    .nav a{padding:15px 20px;border-top:1px solid var(--bone-line-soft);}
+  }
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){ .reveal{opacity:1;transform:none;transition:none;} }
+
+  .section-label{display:flex;align-items:center;gap:12px;margin:0 0 18px;}
+  .section-label .kanji-lg{font-family:'Noto Serif JP',serif;font-size:19px;color:var(--katana-deep);line-height:1;}
+  .section-label.rust .kanji-lg{color:var(--rust-deep);}
+
+  .kanji-lg,.foot-credit .kanji{position:relative;cursor:help;}
+  .kanji-lg::after,.foot-credit .kanji::after{content:attr(data-tip);position:absolute;left:50%;top:calc(100% + 9px);transform:translateX(-50%) translateY(4px);background:var(--ink);color:var(--bone);font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;padding:5px 10px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s var(--ease),transform .15s var(--ease);z-index:20;}
+  .kanji-lg::before,.foot-credit .kanji::before{content:'';position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:2px;border:5px solid transparent;border-bottom-color:var(--ink);opacity:0;transition:opacity .15s var(--ease);}
+  .kanji-lg:hover::after,.kanji-lg:focus-visible::after,.kanji-lg:hover::before,.kanji-lg:focus-visible::before,
+  .foot-credit .kanji:hover::after,.foot-credit .kanji:focus-visible::after,.foot-credit .kanji:hover::before,.foot-credit .kanji:focus-visible::before{opacity:1;transform:translateX(-50%) translateY(0);}
+  .kanji-lg:focus-visible,.foot-credit .kanji:focus-visible{outline:2px solid var(--katana-deep);outline-offset:3px;border-radius:2px;}
+
+  .hero{position:relative;min-height:calc(100svh - 64px);display:flex;align-items:center;padding:80px 0;border-bottom:1px solid var(--bone-line);overflow:hidden;}
+  .hero .wrap{width:100%;}
+  @media (max-width:640px){ .hero{min-height:calc(100svh - 57px);padding:64px 0;} }
+  .hero .wrap{position:relative;}
+  .hero-content{position:relative;z-index:2;max-width:660px;}
+  .hero .badge{display:inline-flex;align-items:center;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--katana-deep);text-transform:uppercase;padding:8px 16px;border:1px solid var(--bone-line);border-radius:999px;margin:0 0 28px;}
+  .hero h1{font-size:clamp(34px,4.6vw,58px);font-weight:700;letter-spacing:-0.02em;line-height:1.08;}
+  .hero-cta{display:inline-flex;align-items:center;gap:8px;margin-top:36px;font-family:var(--display);font-weight:700;font-size:14.5px;text-decoration:none;color:var(--katana-deep);padding:13px 26px;border:1px solid var(--katana-deep);border-radius:999px;transition:background .15s var(--ease),color .15s var(--ease);}
+  .hero-cta svg{width:14px;height:14px;transition:transform .15s var(--ease);}
+  .hero-cta:hover{background:var(--katana-deep);color:var(--bone);}
+  .hero-cta:hover svg{transform:translateX(3px);}
+
+  .hero-mark-wrap{position:absolute;top:50%;right:8px;transform:translateY(-50%);z-index:1;pointer-events:none;}
+  .hero-mark{width:clamp(200px,26vw,380px);animation:heroMarkFloat 6s ease-in-out infinite;}
+  .hero-mark svg{width:100%;height:100%;display:block;}
+  .hero-mark rect.sq{transform-box:fill-box;transform-origin:center;animation:markSquareIn .6s var(--ease) .3s both;}
+  @keyframes heroMarkFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+  @media (max-width:760px){
+    .hero .wrap{display:flex;flex-direction:column;}
+    .hero-mark-wrap{position:static;transform:none;order:-1;margin:0 0 24px;pointer-events:auto;}
+    .hero-mark{width:56px;animation:none;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .hero-mark{animation:none;}
+    .hero-mark rect.sq{animation:none;opacity:1;transform:none;}
+  }
+
+  .problema{padding:72px 0;background:var(--bone-dim);border-bottom:1px solid var(--bone-line);}
+  .problema h2{font-size:clamp(24px,3vw,32px);font-weight:700;max-width:16ch;margin-bottom:44px;}
+  .problema-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;}
+  @media (max-width:760px){ .problema-grid{grid-template-columns:1fr;gap:32px;} }
+  .problema-item:nth-child(2){transition-delay:.08s;}
+  .problema-item:nth-child(3){transition-delay:.16s;}
+  .problema-item .n{font-family:var(--mono);font-size:12px;color:var(--rust-deep);margin-bottom:14px;}
+  .problema-item .t{font-family:var(--display);font-weight:700;font-size:18px;margin-bottom:8px;}
+  .problema-item .d{font-size:14.5px;color:var(--ash-onlight);line-height:1.55;max-width:32ch;}
+
+  .catalog{padding:72px 0 96px;background:var(--bone);border-bottom:1px solid var(--bone-line);}
+  .catalog-head{margin:0 0 36px;max-width:56ch;}
+  .catalog-head h2{font-size:clamp(21px,2.4vw,26px);font-weight:700;margin-bottom:10px;}
+  .catalog-head p{font-size:15px;color:var(--ash-onlight);line-height:1.55;}
+
+  .metodo{padding:96px 0 140px;background:var(--bone-dim);border-bottom:1px solid var(--bone-line);}
+  .metodo h2{font-size:clamp(24px,3vw,32px);font-weight:700;max-width:18ch;margin-bottom:56px;}
+
+  .metodo-list{position:relative;}
+  .metodo-row{position:sticky;top:88px;display:flex;gap:26px;align-items:flex-start;background:var(--bone);border-radius:16px;padding:34px 38px;box-shadow:0 18px 36px -18px rgba(26,26,26,.22);}
+  .metodo-row + .metodo-row{margin-top:18px;}
+  .metodo-row:nth-child(1){z-index:1;}
+  .metodo-row:nth-child(2){z-index:2;transition-delay:.06s;}
+  .metodo-row:nth-child(3){z-index:3;transition-delay:.12s;}
+  .metodo-row:nth-child(4){z-index:4;transition-delay:.18s;}
+  @media (max-width:640px){ .metodo-row{top:72px;padding:26px 24px;gap:6px;flex-direction:column;} }
+  .metodo-row .num{font-family:var(--display);font-weight:700;font-size:38px;line-height:1;color:var(--katana-deep);flex:none;width:56px;}
+  @media (max-width:640px){ .metodo-row .num{font-size:28px;width:auto;} }
+  .metodo-row .body{display:flex;flex-direction:column;gap:8px;}
+  .metodo-row .t{font-family:var(--display);font-weight:700;font-size:19px;}
+  .metodo-row .d{font-size:14.5px;color:var(--ash-onlight);line-height:1.6;max-width:48ch;}
+
+  .sobre{padding:80px 0 88px;background:var(--bone);border-bottom:1px solid var(--bone-line);}
+  .sobre-inner{max-width:64ch;}
+  .sobre blockquote{margin:0 0 28px;font-family:var(--display);font-weight:500;font-size:clamp(22px,3vw,30px);line-height:1.2;letter-spacing:-0.01em;}
+  .sobre p{font-size:15.5px;color:var(--ash-onlight);line-height:1.7;margin-bottom:16px;}
+  .sobre p:last-child{margin-bottom:0;}
+  .sobre a{color:var(--katana-deep);text-decoration:underline;text-decoration-color:var(--bone-line);text-underline-offset:2px;}
+
+  .colecoes-list{display:flex;flex-direction:column;gap:36px;}
+  .colecao{display:flex;align-items:center;gap:52px;padding:44px;border-radius:18px;position:relative;}
+  .colecao:nth-child(even){flex-direction:row-reverse;}
+  .colecao.escala{background:var(--katana-tint);}
+  .colecao.ponte{background:var(--rust-tint);}
+  @media (max-width:860px){
+    .colecao{flex-direction:column!important;padding:26px;gap:26px;}
+  }
+
+  .colecao-media-link{flex:0 0 240px;display:block;border-radius:10px;text-decoration:none;}
+  @media (max-width:860px){ .colecao-media-link{flex:0 0 auto;width:100%;max-width:220px;} }
+  .colecao-media{aspect-ratio:3/4;overflow:hidden;border-radius:10px;box-shadow:0 24px 48px -18px rgba(26,26,26,.32);transform:rotate(-2deg);transition:transform .25s var(--ease);}
+  .colecao:nth-child(even) .colecao-media{transform:rotate(2deg);}
+  .colecao:hover .colecao-media{transform:rotate(0deg) scale(1.015);}
+  @media (max-width:860px){ .colecao-media{transform:none!important;} }
+  .colecao-media img{width:100%;height:100%;object-fit:cover;object-position:center;}
+  .colecao.escala .colecao-media img{object-position:center 82%;}
+
+  .colecao-panel{flex:1;min-width:0;display:flex;flex-direction:column;gap:16px;}
+  .colecao-eyebrow{display:flex;align-items:flex-end;gap:16px;}
+  .colecao-eyebrow .num{font-family:var(--display);font-weight:700;font-size:52px;line-height:.78;}
+  .colecao.escala .colecao-eyebrow .num{color:var(--katana-deep);}
+  .colecao.ponte .colecao-eyebrow .num{color:var(--rust-deep);}
+  .colecao-eyebrow .kicker{margin:0 0 4px;}
+  .colecao-panel h3{font-size:clamp(23px,2.6vw,29px);font-weight:700;}
+  .colecao-hook{font-size:15px;color:var(--ash-onlight);line-height:1.6;max-width:48ch;}
+
+  .colecao-includes{display:flex;gap:22px;flex-wrap:wrap;padding:15px 0;border-top:1px solid var(--bone-line);border-bottom:1px solid var(--bone-line);}
+  .colecao-includes .item{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:var(--ash-onlight);text-transform:uppercase;}
+  .colecao-includes svg{width:15px;height:15px;flex:none;}
+  .colecao.escala .colecao-includes svg{color:var(--katana-deep);}
+  .colecao.ponte .colecao-includes svg{color:var(--rust-deep);}
+
+  .colecao-foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  .colecao-badge{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;color:var(--ash-onlight);}
+  .colecao-badge .icon-well{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:9999px;flex:none;box-shadow:inset 3px 3px 6px var(--neu-dark),inset -3px -3px 6px var(--neu-light);}
+  .colecao-badge svg{width:13px;height:13px;flex:none;}
+  .colecao-cta{display:flex;align-items:center;gap:18px;}
+  .colecao-price{font-family:var(--mono);font-size:16.5px;font-weight:500;}
+  .colecao-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:14.5px;text-decoration:none;color:var(--bone);padding:12px 22px;border-radius:14px;box-shadow:6px 6px 14px rgba(0,0,0,.18),-4px -4px 10px rgba(255,255,255,.35);transition:transform .15s var(--ease),box-shadow .15s var(--ease);}
+  .colecao.escala .colecao-btn{background:var(--katana);}
+  .colecao.ponte .colecao-btn{background:var(--rust);}
+  .colecao-btn:hover{transform:translateY(-2px);box-shadow:8px 8px 20px rgba(0,0,0,.22),-5px -5px 12px rgba(255,255,255,.4);}
+  .colecao-btn:active{transform:translateY(1px);box-shadow:inset 4px 4px 9px rgba(0,0,0,.28),inset -3px -3px 7px rgba(255,255,255,.2);}
+  .colecao-btn svg{width:14px;height:14px;transition:transform .15s var(--ease);}
+  .colecao-btn:hover svg{transform:translateX(3px);}
 
   footer{padding:40px 0 30px;border-top:1px solid var(--bone-line);}
-  .foot-credit{font-family:var(--mono);font-size:11px;color:var(--ash);text-align:center;margin-bottom:18px;display:flex;align-items:center;justify-content:center;gap:8px;}
+  .foot-credit{font-family:var(--mono);font-size:11px;color:var(--ash-onlight);text-align:center;margin-bottom:18px;display:flex;align-items:center;justify-content:center;gap:8px;}
   .kanji{font-family:'Noto Serif JP',serif;font-size:13px;}
   .foot-row{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--ash-onlight);flex-wrap:wrap;gap:8px;}
-  .foot-legal{margin-top:14px;padding-top:14px;border-top:1px solid var(--bone-line);font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;color:var(--ash);text-align:center;line-height:1.8;}
-  .foot-legal a{color:var(--ash);text-decoration:underline;text-decoration-color:var(--bone-line);text-underline-offset:2px;}
+  .foot-legal{margin-top:14px;padding-top:14px;border-top:1px solid var(--bone-line);font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;color:var(--ash-onlight);text-align:center;line-height:1.8;}
+  .foot-legal a{color:var(--ash-onlight);text-decoration:underline;text-decoration-color:var(--bone-line);text-underline-offset:2px;}
   .foot-legal a:hover{color:var(--katana-deep);}
 </style>
 </head>
@@ -126,74 +251,208 @@
 
 <div class="grain" aria-hidden="true"></div>
 
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
 <header class="masthead">
   <div class="wrap row">
     <div class="mark">
       <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M 74.645 106.693 A 44 44 0 1 1 107.458 70.883" fill="none" stroke="var(--ink)" stroke-width="8" stroke-linecap="butt"/>
-        <rect x="82" y="80" width="24" height="24" fill="var(--katana)"/>
+        <rect class="sq" x="82" y="80" width="24" height="24" fill="var(--katana)"/>
       </svg>
       <div class="word"><b>tokio</b><span>&nbsp;editions</span></div>
     </div>
-    <div class="kicker">Guias práticos</div>
+    <nav class="nav" id="siteNav">
+      <a href="#problema">O problema</a>
+      <a href="#colecoes">Coleções</a>
+      <a href="#metodo">Método</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Abrir menu">
+      <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
   </div>
 </header>
 
+<main id="main">
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow"><span class="sq"></span>Editora independente</p>
-    <h1>Guias diretos,<br>sem enrolação.</h1>
-    <p class="lede">Cada guia da tokio editions ensina uma coisa só, do início ao fim, sem jargão e sem depender de experiência prévia — passo a passo, pra quem nunca fez aquilo na vida.</p>
+    <div class="hero-content">
+      <span class="badge">2 coleções ativas · 2026</span>
+      <h1>Conectando curiosidade a resultado.</h1>
+      <a class="hero-cta" href="#colecoes">Ver os guias
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="hero-mark-wrap" aria-hidden="true">
+      <div class="hero-mark">
+        <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 74.645 106.693 A 44 44 0 1 1 107.458 70.883" fill="none" stroke="var(--ink)" stroke-width="8" stroke-linecap="butt"/>
+          <rect class="sq" x="82" y="80" width="24" height="24" fill="var(--katana)"/>
+        </svg>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="catalog">
+<section class="problema" id="problema">
   <div class="wrap">
-    <div class="catalog-head">
-      <h2>Os guias</h2>
-    </div>
-
-    <div class="grid">
-      <a class="card escala" href="escala-zero.html">
-        <div class="card-media">
-          <img src="assets/capa-escala-zero.jpg" alt="Capa do e-book Escala Zero" loading="eager"/>
-        </div>
-        <div class="card-body">
-          <p class="kicker katana">Coleção Mundo em Escala · Nº 01</p>
-          <h3>Escala Zero</h3>
-          <p class="hook">Guia de entrada no plastimodelismo: do primeiro kit ao primeiro modelo concluído. Sem jargão, sem enrolação, sem precisar de sorte pra dar certo.</p>
-          <div class="card-foot">
-            <span class="price">R$19,90</span>
-            <span class="go">Ver o guia
-              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </div>
-        </div>
-      </a>
-
-      <a class="card ponte" href="sem-medo-do-celular.html">
-        <div class="card-media">
-          <img src="assets/ponte/capa-sem-medo-do-celular.jpg" alt="Capa do e-book Sem Medo do Celular" loading="eager"/>
-        </div>
-        <div class="card-body">
-          <p class="kicker rust">Coleção Ponte · Nº 01</p>
-          <h3>Sem Medo do Celular</h3>
-          <p class="hook">Você vai conseguir sozinho, no seu tempo, sem pressa e sem susto. Um guia pra presentear alguém que você ama e que tem medo de mexer no celular.</p>
-          <div class="card-foot">
-            <span class="price">R$19,90</span>
-            <span class="go">Ver o guia
-              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </div>
-        </div>
-      </a>
+    <div class="section-label reveal"><span class="kanji-lg" role="img" aria-label="Kanji: parede" tabindex="0" data-tip="parede">壁</span><span class="kicker">O que trava</span></div>
+    <h2 class="reveal">Aprender sozinho não devia ser o obstáculo.</h2>
+    <div class="problema-grid">
+      <div class="problema-item reveal">
+        <p class="n">01</p>
+        <p class="t">Começa no meio.</p>
+        <p class="d">Conteúdo que presume que você já sabe o básico, e pula direto pro avançado.</p>
+      </div>
+      <div class="problema-item reveal">
+        <p class="n">02</p>
+        <p class="t">Jargão sem tradução.</p>
+        <p class="d">Termo técnico jogado sem explicação, bem na hora que você mais precisava dele.</p>
+      </div>
+      <div class="problema-item reveal">
+        <p class="n">03</p>
+        <p class="t">Medo de errar.</p>
+        <p class="d">Sem noção de por onde começar, trava antes do primeiro passo.</p>
+      </div>
     </div>
   </div>
 </section>
+
+<section class="catalog" id="colecoes">
+  <div class="wrap">
+    <div class="catalog-head reveal">
+      <h2>Os guias</h2>
+      <p>Cada coleção resolve um obstáculo desses do início ao fim — sem pular etapa, sem deixar você sozinho no meio do caminho.</p>
+    </div>
+
+    <div class="colecoes-list">
+      <article class="colecao escala">
+        <a class="colecao-media-link" href="escala-zero.html" tabindex="-1" aria-hidden="true">
+          <div class="colecao-media">
+            <img src="assets/capa-escala-zero.jpg" alt="Capa do e-book Escala Zero" loading="lazy"/>
+          </div>
+        </a>
+        <div class="colecao-panel">
+          <div class="colecao-eyebrow">
+            <span class="num">Nº 01</span>
+            <div>
+              <p class="kicker">Coleção Mundo em Escala</p>
+            </div>
+          </div>
+          <h3><a href="escala-zero.html" style="color:inherit;text-decoration:none;">Escala Zero</a></h3>
+          <p class="colecao-hook">Guia de entrada no plastimodelismo: do primeiro kit ao primeiro modelo concluído. Sem jargão, sem enrolação, sem precisar de sorte pra dar certo.</p>
+          <div class="colecao-includes">
+            <span class="item"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 3.5h6a2 2 0 0 1 2 2V17a1.5 1.5 0 0 0-1.5-1.5H4V3.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M16 3.5h-2a2 2 0 0 0-2 2V17a1.5 1.5 0 0 1 1.5-1.5H16V3.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>Guia completo</span>
+            <span class="item"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2.5" y="4.5" width="15" height="11" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M5.5 8h9M5.5 11h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>Cartão de consulta</span>
+            <span class="item"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 2.5l2.24 4.54 5.01.73-3.63 3.53.86 4.99L10 13.9l-4.48 2.36.86-4.99-3.63-3.53 5.01-.73L10 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>5 bônus</span>
+          </div>
+          <div class="colecao-foot">
+            <span class="colecao-badge">
+              <span class="icon-well"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 2.5l6 2.2v4.6c0 4-2.6 6.8-6 8.2-3.4-1.4-6-4.2-6-8.2V4.7l6-2.2Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M7.3 10l1.9 1.9 3.5-3.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Garantia de 7 dias
+            </span>
+            <div class="colecao-cta">
+              <span class="colecao-price">R$19,90</span>
+              <a class="colecao-btn" href="escala-zero.html">Ver o guia
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="colecao ponte">
+        <a class="colecao-media-link" href="sem-medo-do-celular.html" tabindex="-1" aria-hidden="true">
+          <div class="colecao-media">
+            <img src="assets/ponte/capa-sem-medo-do-celular.jpg" alt="Capa do e-book Sem Medo do Celular" loading="lazy"/>
+          </div>
+        </a>
+        <div class="colecao-panel">
+          <div class="colecao-eyebrow">
+            <span class="num">Nº 01</span>
+            <div>
+              <p class="kicker">Coleção Ponte</p>
+            </div>
+          </div>
+          <h3><a href="sem-medo-do-celular.html" style="color:inherit;text-decoration:none;">Sem Medo do Celular</a></h3>
+          <p class="colecao-hook">Você vai conseguir sozinho, no seu tempo, sem pressa e sem susto. Um guia pra presentear alguém que você ama e que tem medo de mexer no celular.</p>
+          <div class="colecao-includes">
+            <span class="item"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 3.5h6a2 2 0 0 1 2 2V17a1.5 1.5 0 0 0-1.5-1.5H4V3.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M16 3.5h-2a2 2 0 0 0-2 2V17a1.5 1.5 0 0 1 1.5-1.5H16V3.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>Guia completo</span>
+            <span class="item"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2.5" y="4.5" width="15" height="11" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M5.5 8h9M5.5 11h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>Cartão de consulta</span>
+            <span class="item"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 2.5l2.24 4.54 5.01.73-3.63 3.53.86 4.99L10 13.9l-4.48 2.36.86-4.99-3.63-3.53 5.01-.73L10 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>5 bônus</span>
+          </div>
+          <div class="colecao-foot">
+            <span class="colecao-badge">
+              <span class="icon-well"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 2.5l6 2.2v4.6c0 4-2.6 6.8-6 8.2-3.4-1.4-6-4.2-6-8.2V4.7l6-2.2Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M7.3 10l1.9 1.9 3.5-3.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Garantia de 7 dias
+            </span>
+            <div class="colecao-cta">
+              <span class="colecao-price">R$19,90</span>
+              <a class="colecao-btn" href="sem-medo-do-celular.html">Ver o guia
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="metodo" id="metodo">
+  <div class="wrap">
+    <div class="section-label rust reveal"><span class="kanji-lg" role="img" aria-label="Kanji: método" tabindex="0" data-tip="método / forma">型</span><span class="kicker">Como fazemos</span></div>
+    <h2 class="reveal">Cada guia segue o mesmo rigor.</h2>
+    <div class="metodo-list">
+      <div class="metodo-row reveal">
+        <span class="num">01</span>
+        <div class="body">
+          <p class="t">Pesquisa &amp; validação</p>
+          <p class="d">Antes de escrever uma linha, a gente valida se o caminho proposto realmente funciona pra quem nunca fez aquilo.</p>
+        </div>
+      </div>
+      <div class="metodo-row reveal">
+        <span class="num">02</span>
+        <div class="body">
+          <p class="t">Estrutura &amp; escrita</p>
+          <p class="d">O conteúdo é decomposto em passos claros e verificáveis — método, não teoria solta.</p>
+        </div>
+      </div>
+      <div class="metodo-row reveal">
+        <span class="num">03</span>
+        <div class="body">
+          <p class="t">Diagramação</p>
+          <p class="d">Cada guia ganha um sistema visual próprio, pensado pra leitura — não só pra ilustrar a página.</p>
+        </div>
+      </div>
+      <div class="metodo-row reveal">
+        <span class="num">04</span>
+        <div class="body">
+          <p class="t">Revisão &amp; QA</p>
+          <p class="d">Revisão técnica e de conteúdo antes de qualquer guia ser publicado — nada sai sem passar por esse crivo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sobre" id="sobre">
+  <div class="wrap">
+    <div class="section-label reveal"><span class="kanji-lg" role="img" aria-label="Kanji: origem" tabindex="0" data-tip="origem / motivo">由</span><span class="kicker">Sobre a tokio editions</span></div>
+    <div class="sobre-inner reveal">
+      <blockquote>Transformar curiosidade em prática, um guia por vez.</blockquote>
+      <p>Publicamos guias digitais que decompõem ofícios e hobbies complexos em percursos claros, verificáveis e possíveis de começar sozinho — com o rigor de um manual técnico e a leveza de uma boa leitura.</p>
+      <p>Da curiosidade ao primeiro resultado, com um caminho que você consegue seguir sozinho: essa é a promessa por trás de cada coleção, seja qual for o ofício.</p>
+      <p>tokio editions é o braço editorial da <a href="https://tokiostudiodesign.com" target="_blank" rel="noopener">TOKIO Studio</a> — chancela dentro do mesmo ecossistema, falando com quem lê, não com quem contrata um serviço.</p>
+    </div>
+  </div>
+</section>
+</main>
 
 <footer>
   <div class="wrap foot-credit">
-    <span class="kanji">東京</span> Parte do ecossistema <a href="https://tokiostudiodesign.com" target="_blank" rel="noopener">TOKIO</a>
+    <span class="kanji" role="img" aria-label="Kanji: Tóquio" tabindex="0" data-tip="Tóquio">東京</span> Parte do ecossistema <a href="https://tokiostudiodesign.com" target="_blank" rel="noopener">TOKIO</a>
   </div>
   <div class="wrap foot-row">
     <span>tokio editions</span>
@@ -203,6 +462,35 @@
     Thiago de Souza Porto · CPF 299.480.138-83 · <a href="mailto:contato@tokiostudiodesign.com">contato@tokiostudiodesign.com</a> · <a href="termos.html">Termos de Venda</a> · <a href="privacidade.html">Política de Privacidade</a>
   </div>
 </footer>
+
+<script>
+(function(){
+  var navToggle = document.getElementById('navToggle');
+  var nav = document.getElementById('siteNav');
+  if(navToggle && nav){
+    navToggle.addEventListener('click', function(){
+      var isOpen = nav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        nav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+})();
+(function(){
+  if(!('IntersectionObserver' in window)){ return; }
+  var els = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
 
 </body>
 </html>
