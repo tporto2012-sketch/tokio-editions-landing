@@ -1,7 +1,33 @@
 const CHECKOUT_URL = "https://pay.hotmart.com/S107588415M";
+const CAMPAIGN_PARAMETERS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+
+function buildCheckoutUrl() {
+  const checkoutUrl = new URL(CHECKOUT_URL);
+  const landingParameters = new URLSearchParams(window.location.search);
+
+  CAMPAIGN_PARAMETERS.forEach((name) => {
+    const value = landingParameters.get(name);
+    if (value) checkoutUrl.searchParams.set(name, value.slice(0, 200));
+  });
+
+  return checkoutUrl.toString();
+}
 
 document.querySelectorAll("[data-checkout]").forEach((link) => {
-  link.href = CHECKOUT_URL;
+  link.href = buildCheckoutUrl();
+  link.addEventListener("click", () => {
+    window.tokioTracking?.track(
+      "CheckoutClick",
+      {
+        content_name: "Geração Sanduíche",
+        content_ids: ["geracao-sanduiche"],
+        content_type: "product",
+        value: 19.90,
+        currency: "BRL",
+      },
+      { custom: true }
+    );
+  });
 });
 
 const menuButton = document.querySelector(".menu-toggle");

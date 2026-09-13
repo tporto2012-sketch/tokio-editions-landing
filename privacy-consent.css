@@ -1,0 +1,57 @@
+.privacy-banner {
+  position: fixed;
+  z-index: 200;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  color: #1a1a1a;
+  background: #f2f0eb;
+  border: 1px solid #1a1a1a;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.24);
+  font-family: "DM Sans", sans-serif;
+}
+
+.privacy-banner__copy { max-width: 50rem; }
+.privacy-banner__copy strong { display: block; margin-bottom: .35rem; font-size: 1rem; }
+.privacy-banner__copy p { margin: 0 0 .4rem; font-size: .9rem; line-height: 1.5; }
+.privacy-banner__copy a { color: #1a1a1a; font-size: .82rem; text-underline-offset: .2rem; }
+.privacy-banner__actions { display: flex; gap: .65rem; flex-shrink: 0; }
+.privacy-banner__actions button {
+  min-height: 44px;
+  padding: .7rem 1rem;
+  border: 1px solid #1a1a1a;
+  background: transparent;
+  color: #1a1a1a;
+  font: 600 .85rem/1 "DM Sans", sans-serif;
+  cursor: pointer;
+}
+.privacy-banner__actions .privacy-banner__accept { background: #f24e3d; }
+.privacy-banner__actions button:focus-visible,
+[data-cookie-settings]:focus-visible { outline: 3px solid #315aff; outline-offset: 3px; }
+
+.cookie-settings {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: .3rem;
+  cursor: pointer;
+}
+
+@media (max-width: 850px) {
+  .privacy-banner { bottom: 80px; align-items: stretch; flex-direction: column; gap: 1rem; }
+  .privacy-banner__actions { display: grid; grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .privacy-banner { right: .5rem; bottom: 76px; left: .5rem; padding: 1rem; }
+}
