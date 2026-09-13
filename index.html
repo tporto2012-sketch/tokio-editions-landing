@@ -25,7 +25,7 @@ src="https://www.facebook.com/tr?id=1375226887389900&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 <title>tokio editions — guias práticos, sem enrolação</title>
-<meta name="description" content="Editora independente de guias práticos: do plastimodelismo ao primeiro contato com o celular. Sem jargão, sem economês, passo a passo."/>
+<meta name="description" content="Guias práticos organizados em duas coleções: Ponte, para desafios da vida cotidiana, e Mundo em Escala, para começar no plastimodelismo."/>
 
 <link rel="icon" type="image/svg+xml" href="assets/tokio-editions_favicon.svg"/>
 <link rel="icon" type="image/png" sizes="32x32" href="assets/tokio-editions_favicon_32px.png"/>
@@ -34,29 +34,43 @@ src="https://www.facebook.com/tr?id=1375226887389900&ev=PageView&noscript=1"
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="tokio editions"/>
 <meta property="og:title" content="tokio editions — guias práticos, sem enrolação"/>
-<meta property="og:description" content="Editora independente de guias práticos: do plastimodelismo ao primeiro contato com o celular. Sem jargão, sem economês, passo a passo."/>
+<meta property="og:description" content="Guias práticos da coleção Ponte e da coleção Mundo em Escala. Conteúdo direto, organizado e feito para acompanhar cada etapa."/>
 <meta property="og:image" content="https://www.tokioeditions.com/assets/v1-og.jpg"/>
 <meta property="og:url" content="https://www.tokioeditions.com/"/>
 <meta property="og:locale" content="pt_BR"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="tokio editions — guias práticos, sem enrolação"/>
-<meta name="twitter:description" content="Editora independente de guias práticos. Sem jargão, sem economês, passo a passo."/>
+<meta name="twitter:description" content="Duas coleções, três guias práticos e um caminho claro do começo ao resultado."/>
 <meta name="twitter:image" content="https://www.tokioeditions.com/assets/v1-og.jpg"/>
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "tokio editions",
-  "url": "https://www.tokioeditions.com/",
-  "logo": "https://www.tokioeditions.com/assets/tokio-editions_favicon_64px.png",
-  "sameAs": ["https://tokiostudiodesign.com"]
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "tokio editions",
+      "url": "https://www.tokioeditions.com/",
+      "logo": "https://www.tokioeditions.com/assets/tokio-editions_favicon_64px.png",
+      "sameAs": ["https://tokiostudiodesign.com"]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Guias da tokio editions",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Sem Medo do Celular","url":"https://www.tokioeditions.com/sem-medo-do-celular.html"},
+        {"@type":"ListItem","position":2,"name":"Geração Sanduíche","url":"https://www.tokioeditions.com/geracao-sanduiche.html"},
+        {"@type":"ListItem","position":3,"name":"Escala Zero","url":"https://www.tokioeditions.com/escala-zero.html"}
+      ]
+    }
+  ]
 }
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Bricolage+Grotesque:wght@300;400;500;700&family=Outfit:wght@300;700&family=Noto+Serif+JP:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Bricolage+Grotesque:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#1A1A1A;
@@ -77,7 +91,7 @@ src="https://www.facebook.com/tr?id=1375226887389900&ev=PageView&noscript=1"
     --neu-dark: rgba(154,130,108,.32);
     --display:'Bricolage Grotesque',sans-serif;
     --body:'DM Sans',sans-serif;
-    --wordmark:'Outfit',sans-serif;
+    --wordmark:'DM Sans',sans-serif;
     --mono:'IBM Plex Mono',monospace;
     --ease: cubic-bezier(.16,.8,.24,1);
   }
@@ -85,12 +99,12 @@ src="https://www.facebook.com/tr?id=1375226887389900&ev=PageView&noscript=1"
   html{scroll-behavior:smooth;}
   @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
   body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
-  h1,h2,h3{font-family:var(--display);margin:0;}
+  h1,h2,h3,h4{font-family:var(--display);margin:0;}
   p{margin:0;}
   img{max-width:100%;height:auto;display:block;}
   a{color:inherit;}
   .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
-  @media (max-width:640px){ .wrap{padding:0 20px;} }
+  @media (max-width:640px){ .wrap{padding:0 24px;} }
 
   .grain{position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.035;mix-blend-mode:multiply;
     background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
@@ -133,7 +147,7 @@ src="https://www.facebook.com/tr?id=1375226887389900&ev=PageView&noscript=1"
   @media (prefers-reduced-motion: reduce){ .reveal{opacity:1;transform:none;transition:none;} }
 
   .section-label{display:flex;align-items:center;gap:12px;margin:0 0 18px;}
-  .section-label .kanji-lg{font-family:'Noto Serif JP',serif;font-size:19px;color:var(--katana-deep);line-height:1;}
+  .section-label .kanji-lg{font-family:'Yu Mincho','MS Mincho',serif;font-size:19px;color:var(--katana-deep);line-height:1;}
   .section-label.rust .kanji-lg{color:var(--rust-deep);}
 
   .kanji-lg,.foot-credit .kanji{position:relative;cursor:help;}
@@ -178,12 +192,12 @@ src="https://www.facebook.com/tr?id=1375226887389900&ev=PageView&noscript=1"
   .problema-item:nth-child(3){transition-delay:.16s;}
   .problema-item .n{font-family:var(--mono);font-size:12px;color:var(--rust-deep);margin-bottom:14px;}
   .problema-item .t{font-family:var(--display);font-weight:700;font-size:18px;margin-bottom:8px;}
-  .problema-item .d{font-size:14.5px;color:var(--ash-onlight);line-height:1.55;max-width:32ch;}
+  .problema-item .d{font-size:16px;color:var(--ash-onlight);line-height:1.55;max-width:32ch;}
 
   .catalog{padding:72px 0 96px;background:var(--bone);border-bottom:1px solid var(--bone-line);}
-  .catalog-head{margin:0 0 36px;max-width:56ch;}
+  .catalog-head{margin:0 0 32px;max-width:60ch;}
   .catalog-head h2{font-size:clamp(21px,2.4vw,26px);font-weight:700;margin-bottom:10px;}
-  .catalog-head p{font-size:15px;color:var(--ash-onlight);line-height:1.55;}
+  .catalog-head p{font-size:16px;color:var(--ash-onlight);line-height:1.6;}
 
   .metodo{padding:96px 0 140px;background:var(--bone-dim);border-bottom:1px solid var(--bone-line);}
   .metodo h2{font-size:clamp(24px,3vw,32px);font-weight:700;max-width:18ch;margin-bottom:56px;}
@@ -200,28 +214,49 @@ src="https://www.facebook.com/tr?id=1375226887389900&ev=PageView&noscript=1"
   @media (max-width:640px){ .metodo-row .num{font-size:28px;width:auto;} }
   .metodo-row .body{display:flex;flex-direction:column;gap:8px;}
   .metodo-row .t{font-family:var(--display);font-weight:700;font-size:19px;}
-  .metodo-row .d{font-size:14.5px;color:var(--ash-onlight);line-height:1.6;max-width:48ch;}
+  .metodo-row .d{font-size:16px;color:var(--ash-onlight);line-height:1.6;max-width:48ch;}
 
   .sobre{padding:80px 0 88px;background:var(--bone);border-bottom:1px solid var(--bone-line);}
   .sobre-inner{max-width:64ch;}
   .sobre blockquote{margin:0 0 28px;font-family:var(--display);font-weight:500;font-size:clamp(22px,3vw,30px);line-height:1.2;letter-spacing:-0.01em;}
-  .sobre p{font-size:15.5px;color:var(--ash-onlight);line-height:1.7;margin-bottom:16px;}
+  .sobre p{font-size:16px;color:var(--ash-onlight);line-height:1.7;margin-bottom:16px;}
   .sobre p:last-child{margin-bottom:0;}
   .sobre a{color:var(--katana-deep);text-decoration:underline;text-decoration-color:var(--bone-line);text-underline-offset:2px;}
 
-  .colecoes-list{display:flex;flex-direction:column;gap:36px;}
+  .collection-index{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:58px;}
+  .collection-index a{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:9px 15px;border:1px solid var(--bone-line);border-radius:999px;background:rgba(255,255,255,.2);font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-decoration:none;text-transform:uppercase;transition:border-color .15s var(--ease),background .15s var(--ease),transform .15s var(--ease);}
+  .collection-index a:hover{transform:translateY(-1px);border-color:var(--katana-deep);background:var(--katana-tint);}
+  .collection-index .count{color:var(--ash-onlight);}
+  .collection-groups{display:flex;flex-direction:column;gap:76px;}
+  .collection-group{scroll-margin-top:96px;}
+  .collection-group + .collection-group{padding-top:70px;border-top:1px solid var(--bone-line);}
+  .collection-group-head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:28px;margin-bottom:30px;}
+  .collection-group-title{display:flex;align-items:flex-start;gap:18px;}
+  .collection-group-title .index{padding-top:7px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--ash-onlight);}
+  .collection-group-head h3{font-size:clamp(30px,4vw,46px);line-height:1;letter-spacing:-.02em;}
+  .collection-group-head p{max-width:52ch;margin-top:12px;color:var(--ash-onlight);font-size:16px;line-height:1.6;}
+  .collection-group-count{align-self:start;margin-top:8px;padding:7px 12px;border:1px solid var(--bone-line);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:.07em;color:var(--ash-onlight);text-transform:uppercase;white-space:nowrap;}
+  .collection-grid{display:grid;gap:28px;}
+  .collection-grid.two-up{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .collection-grid.single{grid-template-columns:1fr;}
   .colecao{display:flex;align-items:center;gap:52px;padding:44px;border-radius:18px;position:relative;}
-  .colecao:nth-child(even){flex-direction:row-reverse;}
   .colecao.escala{background:var(--katana-tint);}
   .colecao.ponte{background:var(--rust-tint);}
+  .collection-grid.two-up .colecao{align-items:stretch;flex-direction:column;padding:32px;gap:28px;}
   @media (max-width:860px){
+    .collection-groups{gap:56px;}
+    .collection-group + .collection-group{padding-top:54px;}
+    .collection-group-head{grid-template-columns:1fr;gap:12px;}
+    .collection-group-count{justify-self:start;margin-top:0;}
+    .collection-grid.two-up{grid-template-columns:1fr;}
     .colecao{flex-direction:column!important;padding:26px;gap:26px;}
   }
 
   .colecao-media-link{flex:0 0 240px;display:block;border-radius:10px;text-decoration:none;}
   @media (max-width:860px){ .colecao-media-link{flex:0 0 auto;width:100%;max-width:220px;} }
   .colecao-media{aspect-ratio:3/4;overflow:hidden;border-radius:10px;box-shadow:0 24px 48px -18px rgba(26,26,26,.32);transform:rotate(-2deg);transition:transform .25s var(--ease);}
-  .colecao:nth-child(even) .colecao-media{transform:rotate(2deg);}
+  .collection-grid.two-up .colecao-media{transform:none;}
+  .collection-grid.two-up .colecao-media-link{flex:0 0 auto;width:100%;max-width:190px;align-self:flex-start;}
   .colecao:hover .colecao-media{transform:rotate(0deg) scale(1.015);}
   @media (max-width:860px){ .colecao-media{transform:none!important;} }
   .colecao-media img{width:100%;height:100%;object-fit:cover;object-position:center;}
@@ -233,8 +268,8 @@ src="https://www.facebook.com/tr?id=1375226887389900&ev=PageView&noscript=1"
   .colecao.escala .colecao-eyebrow .num{color:var(--katana-deep);}
   .colecao.ponte .colecao-eyebrow .num{color:var(--rust-deep);}
   .colecao-eyebrow .kicker{margin:0 0 4px;}
-  .colecao-panel h3{font-size:clamp(23px,2.6vw,29px);font-weight:700;}
-  .colecao-hook{font-size:15px;color:var(--ash-onlight);line-height:1.6;max-width:48ch;}
+  .colecao-panel h4{font-size:clamp(23px,2.6vw,29px);font-weight:700;}
+  .colecao-hook{font-size:16px;color:var(--ash-onlight);line-height:1.6;max-width:48ch;}
 
   .colecao-includes{display:flex;gap:22px;flex-wrap:wrap;padding:15px 0;border-top:1px solid var(--bone-line);border-bottom:1px solid var(--bone-line);}
   .colecao-includes .item{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:var(--ash-onlight);text-transform:uppercase;}
@@ -242,7 +277,7 @@ src="https://www.facebook.com/tr?id=1375226887389900&ev=PageView&noscript=1"
   .colecao.escala .colecao-includes svg{color:var(--katana-deep);}
   .colecao.ponte .colecao-includes svg{color:var(--rust-deep);}
 
-  .colecao-foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  .colecao-foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:auto;}
   .colecao-badge{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;color:var(--ash-onlight);}
   .colecao-badge .icon-well{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:9999px;flex:none;box-shadow:inset 3px 3px 6px var(--neu-dark),inset -3px -3px 6px var(--neu-light);}
   .colecao-badge svg{width:13px;height:13px;flex:none;}
@@ -250,7 +285,7 @@ src="https://www.facebook.com/tr?id=1375226887389900&ev=PageView&noscript=1"
   .colecao-price{font-family:var(--mono);font-size:16.5px;font-weight:500;}
   .colecao-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:14.5px;text-decoration:none;color:var(--bone);padding:12px 22px;border-radius:14px;box-shadow:6px 6px 14px rgba(0,0,0,.18),-4px -4px 10px rgba(255,255,255,.35);transition:transform .15s var(--ease),box-shadow .15s var(--ease);}
   .colecao.escala .colecao-btn{background:var(--katana);}
-  .colecao.ponte .colecao-btn{background:var(--rust);}
+  .colecao.ponte .colecao-btn{background:var(--rust-deep);}
   .colecao-btn:hover{transform:translateY(-2px);box-shadow:8px 8px 20px rgba(0,0,0,.22),-5px -5px 12px rgba(255,255,255,.4);}
   .colecao-btn:active{transform:translateY(1px);box-shadow:inset 4px 4px 9px rgba(0,0,0,.28),inset -3px -3px 7px rgba(255,255,255,.2);}
   .colecao-btn svg{width:14px;height:14px;transition:transform .15s var(--ease);}
@@ -258,8 +293,9 @@ src="https://www.facebook.com/tr?id=1375226887389900&ev=PageView&noscript=1"
 
   footer{padding:40px 0 30px;border-top:1px solid var(--bone-line);}
   .foot-credit{font-family:var(--mono);font-size:11px;color:var(--ash-onlight);text-align:center;margin-bottom:18px;display:flex;align-items:center;justify-content:center;gap:8px;}
-  .kanji{font-family:'Noto Serif JP',serif;font-size:13px;}
+  .kanji{font-family:'Yu Mincho','MS Mincho',serif;font-size:13px;}
   .foot-row{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--ash-onlight);flex-wrap:wrap;gap:8px;}
+  .foot-row a,.foot-legal a{display:inline-flex;align-items:center;min-height:44px;}
   .foot-legal{margin-top:14px;padding-top:14px;border-top:1px solid var(--bone-line);font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;color:var(--ash-onlight);text-align:center;line-height:1.8;}
   .foot-legal a{color:var(--ash-onlight);text-decoration:underline;text-decoration-color:var(--bone-line);text-underline-offset:2px;}
   .foot-legal a:hover{color:var(--katana-deep);}
@@ -296,7 +332,7 @@ src="https://www.facebook.com/tr?id=1375226887389900&ev=PageView&noscript=1"
 <section class="hero">
   <div class="wrap">
     <div class="hero-content">
-      <span class="badge">2 coleções ativas · 2026</span>
+      <span class="badge">2 coleções · 3 guias</span>
       <h1>Conectando curiosidade a resultado.</h1>
       <a class="hero-cta" href="#colecoes">Ver os guias
         <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -340,47 +376,30 @@ src="https://www.facebook.com/tr?id=1375226887389900&ev=PageView&noscript=1"
 <section class="catalog" id="colecoes">
   <div class="wrap">
     <div class="catalog-head reveal">
-      <h2>Os guias</h2>
-      <p>Cada coleção resolve um obstáculo desses do início ao fim — sem pular etapa, sem deixar você sozinho no meio do caminho.</p>
+      <h2>Coleções</h2>
+      <p>Dois caminhos editoriais, cada um com uma função clara. Escolha a coleção e encontre o guia certo para começar.</p>
     </div>
 
-    <div class="colecoes-list">
-      <article class="colecao escala">
-        <a class="colecao-media-link" href="escala-zero.html" tabindex="-1" aria-hidden="true">
-          <div class="colecao-media">
-            <img src="assets/capa-escala-zero.jpg" alt="Capa do e-book Escala Zero" loading="lazy"/>
-          </div>
-        </a>
-        <div class="colecao-panel">
-          <div class="colecao-eyebrow">
-            <span class="num">Nº 01</span>
-            <div>
-              <p class="kicker">Coleção Mundo em Escala</p>
-            </div>
-          </div>
-          <h3><a href="escala-zero.html" style="color:inherit;text-decoration:none;">Escala Zero</a></h3>
-          <p class="colecao-hook">Guia de entrada no plastimodelismo: do primeiro kit ao primeiro modelo concluído. Sem jargão, sem enrolação, sem precisar de sorte pra dar certo.</p>
-          <div class="colecao-includes">
-            <span class="item"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 3.5h6a2 2 0 0 1 2 2V17a1.5 1.5 0 0 0-1.5-1.5H4V3.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M16 3.5h-2a2 2 0 0 0-2 2V17a1.5 1.5 0 0 1 1.5-1.5H16V3.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>Guia completo</span>
-            <span class="item"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2.5" y="4.5" width="15" height="11" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M5.5 8h9M5.5 11h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>Cartão de consulta</span>
-            <span class="item"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 2.5l2.24 4.54 5.01.73-3.63 3.53.86 4.99L10 13.9l-4.48 2.36.86-4.99-3.63-3.53 5.01-.73L10 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>5 bônus</span>
-          </div>
-          <div class="colecao-foot">
-            <span class="colecao-badge">
-              <span class="icon-well"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 2.5l6 2.2v4.6c0 4-2.6 6.8-6 8.2-3.4-1.4-6-4.2-6-8.2V4.7l6-2.2Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M7.3 10l1.9 1.9 3.5-3.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              Garantia de 7 dias
-            </span>
-            <div class="colecao-cta">
-              <span class="colecao-price">R$19,90</span>
-              <a class="colecao-btn" href="escala-zero.html">Ver o guia
-                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
+    <nav class="collection-index reveal" aria-label="Navegar entre coleções">
+      <a href="#colecao-ponte">Ponte <span class="count">2 guias</span></a>
+      <a href="#colecao-mundo-em-escala">Mundo em Escala <span class="count">1 guia</span></a>
+    </nav>
 
-      <article class="colecao ponte">
+    <div class="collection-groups">
+      <section class="collection-group" id="colecao-ponte" aria-labelledby="titulo-colecao-ponte">
+        <header class="collection-group-head reveal">
+          <div class="collection-group-title">
+            <span class="index">01</span>
+            <div>
+              <h3 id="titulo-colecao-ponte">Coleção Ponte</h3>
+              <p>Guias para atravessar mudanças da vida cotidiana com mais autonomia, cuidado e clareza.</p>
+            </div>
+          </div>
+          <span class="collection-group-count">2 guias publicados</span>
+        </header>
+
+        <div class="collection-grid two-up">
+          <article class="colecao ponte">
         <a class="colecao-media-link" href="sem-medo-do-celular.html" tabindex="-1" aria-hidden="true">
           <div class="colecao-media">
             <img src="assets/ponte/capa-sem-medo-do-celular.jpg" alt="Capa do e-book Sem Medo do Celular" loading="lazy"/>
@@ -389,11 +408,8 @@ src="https://www.facebook.com/tr?id=1375226887389900&ev=PageView&noscript=1"
         <div class="colecao-panel">
           <div class="colecao-eyebrow">
             <span class="num">Nº 01</span>
-            <div>
-              <p class="kicker">Coleção Ponte</p>
-            </div>
           </div>
-          <h3><a href="sem-medo-do-celular.html" style="color:inherit;text-decoration:none;">Sem Medo do Celular</a></h3>
+          <h4><a href="sem-medo-do-celular.html" style="color:inherit;text-decoration:none;">Sem Medo do Celular</a></h4>
           <p class="colecao-hook">Você vai conseguir sozinho, no seu tempo, sem pressa e sem susto. Um guia pra presentear alguém que você ama e que tem medo de mexer no celular.</p>
           <div class="colecao-includes">
             <span class="item"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 3.5h6a2 2 0 0 1 2 2V17a1.5 1.5 0 0 0-1.5-1.5H4V3.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M16 3.5h-2a2 2 0 0 0-2 2V17a1.5 1.5 0 0 1 1.5-1.5H16V3.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>Guia completo</span>
@@ -413,9 +429,9 @@ src="https://www.facebook.com/tr?id=1375226887389900&ev=PageView&noscript=1"
             </div>
           </div>
         </div>
-      </article>
+          </article>
 
-      <article class="colecao ponte">
+          <article class="colecao ponte">
         <a class="colecao-media-link" href="geracao-sanduiche.html" tabindex="-1" aria-hidden="true">
           <div class="colecao-media">
             <img src="assets/geracao-sanduiche/produto/ebook-capa.jpg" alt="Capa do e-book Geração Sanduíche" loading="lazy"/>
@@ -424,11 +440,8 @@ src="https://www.facebook.com/tr?id=1375226887389900&ev=PageView&noscript=1"
         <div class="colecao-panel">
           <div class="colecao-eyebrow">
             <span class="num">Nº 02</span>
-            <div>
-              <p class="kicker">Coleção Ponte</p>
-            </div>
           </div>
-          <h3><a href="geracao-sanduiche.html" style="color:inherit;text-decoration:none;">Geração Sanduíche</a></h3>
+          <h4><a href="geracao-sanduiche.html" style="color:inherit;text-decoration:none;">Geração Sanduíche</a></h4>
           <p class="colecao-hook">Entre seus pais e seus filhos: um guia prático para organizar tempo, papéis e limites quando duas gerações precisam de você ao mesmo tempo.</p>
           <div class="colecao-includes">
             <span class="item"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 3.5h6a2 2 0 0 1 2 2V17a1.5 1.5 0 0 0-1.5-1.5H4V3.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M16 3.5h-2a2 2 0 0 0-2 2V17a1.5 1.5 0 0 1 1.5-1.5H16V3.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>107 páginas</span>
@@ -448,7 +461,56 @@ src="https://www.facebook.com/tr?id=1375226887389900&ev=PageView&noscript=1"
             </div>
           </div>
         </div>
-      </article>
+          </article>
+        </div>
+      </section>
+
+      <section class="collection-group" id="colecao-mundo-em-escala" aria-labelledby="titulo-colecao-mundo-em-escala">
+        <header class="collection-group-head reveal">
+          <div class="collection-group-title">
+            <span class="index">02</span>
+            <div>
+              <h3 id="titulo-colecao-mundo-em-escala">Coleção Mundo em Escala</h3>
+              <p>Guias para transformar a curiosidade pelo modelismo em projetos concluídos, do primeiro passo em diante.</p>
+            </div>
+          </div>
+          <span class="collection-group-count">1 guia publicado</span>
+        </header>
+
+        <div class="collection-grid single">
+          <article class="colecao escala">
+            <a class="colecao-media-link" href="escala-zero.html" tabindex="-1" aria-hidden="true">
+              <div class="colecao-media">
+                <img src="assets/capa-escala-zero.jpg" alt="Capa do e-book Escala Zero" loading="lazy"/>
+              </div>
+            </a>
+            <div class="colecao-panel">
+              <div class="colecao-eyebrow">
+                <span class="num">Nº 01</span>
+              </div>
+              <h4><a href="escala-zero.html" style="color:inherit;text-decoration:none;">Escala Zero</a></h4>
+              <p class="colecao-hook">Guia de entrada no plastimodelismo: do primeiro kit ao primeiro modelo concluído. Sem jargão, sem enrolação, sem precisar de sorte pra dar certo.</p>
+              <div class="colecao-includes">
+                <span class="item"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 3.5h6a2 2 0 0 1 2 2V17a1.5 1.5 0 0 0-1.5-1.5H4V3.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M16 3.5h-2a2 2 0 0 0-2 2V17a1.5 1.5 0 0 1 1.5-1.5H16V3.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>Guia completo</span>
+                <span class="item"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2.5" y="4.5" width="15" height="11" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M5.5 8h9M5.5 11h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>Cartão de consulta</span>
+                <span class="item"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 2.5l2.24 4.54 5.01.73-3.63 3.53.86 4.99L10 13.9l-4.48 2.36.86-4.99-3.63-3.53 5.01-.73L10 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>5 bônus</span>
+              </div>
+              <div class="colecao-foot">
+                <span class="colecao-badge">
+                  <span class="icon-well"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 2.5l6 2.2v4.6c0 4-2.6 6.8-6 8.2-3.4-1.4-6-4.2-6-8.2V4.7l6-2.2Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M7.3 10l1.9 1.9 3.5-3.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  Garantia de 7 dias
+                </span>
+                <div class="colecao-cta">
+                  <span class="colecao-price">R$19,90</span>
+                  <a class="colecao-btn" href="escala-zero.html">Ver o guia
+                    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
     </div>
   </div>
 </section>
