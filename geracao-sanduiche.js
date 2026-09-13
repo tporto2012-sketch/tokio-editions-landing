@@ -1,4 +1,4 @@
-const CHECKOUT_URL = "https://pay.hotmart.com/URL-PROVISORIA";
+const CHECKOUT_URL = "https://pay.hotmart.com/S107588415M";
 
 document.querySelectorAll("[data-checkout]").forEach((link) => {
   link.href = CHECKOUT_URL;
