@@ -35,14 +35,14 @@
             content_name: "Escala Cero",
             content_ids: ["escala-cero-es-latam"],
             content_type: "product",
-            value: 11.90,
+            value: 8.90,
             currency: "USD"
           });
         }
         if (typeof window.gtag === "function") {
           window.gtag("event", "begin_checkout", {
             currency: "USD",
-            value: 11.90,
+            value: 8.90,
             items: [{ item_id: "escala-cero-es-latam", item_name: "Escala Cero" }]
           });
         }
@@ -89,7 +89,7 @@
         content_name: "Escala Cero",
         content_ids: ["escala-cero-es-latam"],
         content_type: "product",
-        value: 11.90,
+        value: 8.90,
         currency: "USD"
       });
     }
