@@ -21,7 +21,7 @@
     document.head.appendChild(script);
     fbq('init', META_PIXEL_ID);
     fbq('track', 'PageView');
-    fbq('track', 'ViewContent', { content_name: 'Escala Zero', content_category: 'ebook', value: 19.90, currency: 'BRL' });
+    fbq('track', 'ViewContent', { content_name: 'Escala Zero', content_category: 'ebook', value: 16.90, currency: 'BRL' });
   }
 
   const consent = localStorage.getItem(consentKey);
@@ -38,7 +38,7 @@
 
   document.querySelectorAll('.checkout-link').forEach((link) => {
     link.addEventListener('click', () => {
-      if (window.fbq) window.fbq('track', 'InitiateCheckout', { content_name: 'Escala Zero', platform: link.dataset.platform, value: 19.90, currency: 'BRL' });
+      if (window.fbq) window.fbq('track', 'InitiateCheckout', { content_name: 'Escala Zero', platform: link.dataset.platform, value: 16.90, currency: 'BRL' });
     });
   });
 
